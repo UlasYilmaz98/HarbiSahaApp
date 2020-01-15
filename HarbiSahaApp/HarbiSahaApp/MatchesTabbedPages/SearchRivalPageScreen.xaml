@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.MatchesTabbedPages.SearchRivalPageScreen"
+             BackgroundImageSource="searchRivalBg_1_Edited.jpg">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+               
+
+                
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="0,0,0,18">
+                <Button x:Name="btnA" BackgroundColor="#5D9AE5" TextColor="White" HorizontalOptions="FillAndExpand"
+                        Text="HEMEN TAKIM KUR" Margin="20,5,20,0" Clicked="BtnA_Clicked" CornerRadius="15"></Button>
+                <Button x:Name="btnB" BackgroundColor="White" TextColor="#5D9AE5" HorizontalOptions="FillAndExpand"
+                        Text="İLANLARA GÖZAT" Margin="20,5,20,0" CornerRadius="15" Clicked="BtnB_Clicked"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

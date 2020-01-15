@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.LoginPageMain"
+            xmlns:local="clr-namespace:HarbiSahaApp.RegisterPages"
+            Title="Giriş Yap"
+            IconImageSource="user.png">
+
+    <ContentPage Title="Giriş Yap">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+            <Label Margin="12,12,30,6" Text="Devam etmek için giriş yapın" TextColor="#33363d" FontSize="27" FontAttributes="Bold"></Label>
+            
+
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="12,15,12,6">
+                <Label Text="E-posta adresi" TextColor="#33363d" FontSize="Small" FontAttributes="Bold" ></Label>
+                <Entry x:Name="entryEmail" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"></Entry>
+                <Label Text="Parola" TextColor="#33363d" FontSize="Small" FontAttributes="Bold" ></Label>
+                <Entry x:Name="entryPassword" HorizontalOptions="FillAndExpand" IsPassword="True"></Entry>
+                <Button FontAttributes="Bold" TextColor="White" BackgroundColor="#2dbefc" HorizontalOptions="FillAndExpand"
+                            Text="Giriş YAP" x:Name="btnLogin" Clicked="BtnLogin_Clicked"></Button>
+                <Label x:Name="lblFotgotPassword" Text="Şifrenizi mi unuttunuz?" TextColor="#ff242b" Margin="0,8,0,0"></Label>
+
+            </StackLayout>
+
+            <StackLayout IsVisible="False"  x:Name="ActivityLayout" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="10" Padding="7">
+                
+                <AbsoluteLayout HorizontalOptions="Center">
+                    <ActivityIndicator x:Name="activity"  
+                       IsRunning="True"  
+                       IsEnabled="True"  
+                       IsVisible="True"  
+                       Color="#2dbefc"  
+                       BackgroundColor="Transparent"/>
+                </AbsoluteLayout>
+            </StackLayout>
+
+
+        </StackLayout>
+
+
+
+    </ContentPage>
+    <local:RegisterPage></local:RegisterPage>
+</TabbedPage>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "866792046638",
+    "firebase_url": "https://harbisahaapp.firebaseio.com",
+    "project_id": "harbisahaapp",
+    "storage_bucket": "harbisahaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866792046638:android:42362a8d166a4dce405fbf",
+        "android_client_info": {
+          "package_name": "com.degirmenteknoloji.harbisahaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866792046638-i9tu7jhq57q39b2v0ctlhrhaonaij8pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB69BVsDnti6MpZUWaviFzW09BFrkpbsNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866792046638-i9tu7jhq57q39b2v0ctlhrhaonaij8pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

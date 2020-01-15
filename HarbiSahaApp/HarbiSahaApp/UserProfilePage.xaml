@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.UserProfilePage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout BackgroundColor="White">
+                    <StackLayout x:Name="layoutImage" HorizontalOptions="CenterAndExpand" Margin="0,4,0,0">
+
+                        <image:CircleImage HorizontalOptions="Center" BorderColor="#2dbefc" BorderThickness="0.5"
+                                           x:Name="imgProfilePicture" HeightRequest="236" WidthRequest="180" Margin="0" >
+                            <image:CircleImage.GestureRecognizers>
+
+                            </image:CircleImage.GestureRecognizers>
+                        </image:CircleImage>
+
+                    </StackLayout>
+                    <StackLayout x:Name="layoutUsername" HorizontalOptions="CenterAndExpand">
+                        <Label x:Name="lblName" Text="ULAŞ"  FontSize="Large" TextColor="#2dbefc" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                    </StackLayout>
+                    <StackLayout x:Name="layoutDegree" HorizontalOptions="CenterAndExpand">
+                        <Label x:Name="lblDegree" Text="Çaylak" HorizontalOptions="Center" FontSize="Small" TextColor="#2dbefc" FontAttributes="Italic" Margin="0,0,0,5"  >
+
+                        </Label>
+                    </StackLayout>
+                    <Grid RowSpacing="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <!--<ColumnDefinition Width="*"></ColumnDefinition>-->
+                        </Grid.ColumnDefinitions>
+
+                        <!--<Label x:Name="lblHarbiSahaPoints" Text="150" FontAttributes="Bold" FontSize="Title" TextColor="DeepSkyBlue" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"
+                           VerticalOptions="Center"></Label>
+                        <Label Text="TOPLAM PUAN" TextColor="DeepSkyBlue" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>-->
+                        <Label x:Name="lblAveragePoints" Text="4.2" FontAttributes="Bold" FontSize="Title" TextColor="#2dbefc" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"
+                           VerticalOptions="Center"></Label>
+                        <Label Text="ORTALAMA PUAN" TextColor="#2dbefc" Grid.Row="1" FontSize="Medium" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                        <Label x:Name="lblCompletedMatches" FontAttributes="Bold" FontSize="Title" TextColor="#2dbefc" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
+                           VerticalOptions="Center" Text="8"></Label>
+                        <Label Text="OYNANAN MAÇ" FontSize="Medium" TextColor="#2dbefc" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                    </Grid>
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" Margin="12,5,12,5" Opacity="0.3" Color="Gray" HeightRequest="1"></BoxView>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="20,6,6,6">
+                    <Label Text="Bilgilerim" TextColor="Gray" Margin="0,5,0,8"></Label>
+                    <Grid RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                            
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" x:Name="lblCity" Text="" FontAttributes="Bold" TextColor="#2b2b2b" >
+
+                        </Label>
+                        <Label Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" x:Name="lblAge" Text="" FontAttributes="Bold" TextColor="#2b2b2b">
+
+                        </Label>
+                        <Label Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"  x:Name="lblPosition" Text="" FontAttributes="Bold"  TextColor="#2b2b2b">
+
+                        </Label>
+                        <Label Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="3" Grid.Column="1"  x:Name="lblTotalPoints" Text="" FontAttributes="Bold" TextColor="#2b2b2b">
+
+                        </Label>
+                        <Label Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="4" Grid.Column="1"  x:Name="lblHeight" Text="" FontAttributes="Bold" TextColor="#2b2b2b">
+
+                        </Label>
+                        <Image Grid.Row="0" Grid.Column="0" Aspect="AspectFit" HeightRequest="12" Source="cityIcon.png" ></Image>
+                        <Image Grid.Row="1" Grid.Column="0" Aspect="AspectFit" HeightRequest="12" Source="user.png"></Image>
+                        <Image Grid.Row="2" Grid.Column="0" Aspect="AspectFit" HeightRequest="12" Source="footballShirt.png" ></Image>
+                        <Image Grid.Row="3" Grid.Column="0" Aspect="AspectFit" HeightRequest="12" Source="emptyStar.png" ></Image>
+                        <Image Grid.Row="4" Grid.Column="0" Aspect="AspectFit" HeightRequest="12" Source="heightIcon.png" ></Image>
+                    </Grid>
+                   
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" Margin="12,5,12,5" Opacity="0.3" Color="Gray" HeightRequest="1"></BoxView>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="20,6,6,6">
+
+                    <Label Text="Hakkımda" TextColor="Gray" Margin="0,5,0,8"></Label>
+                    <Label x:Name="lblAboutMe" TextColor="Gray" FontAttributes="Bold" Text=""></Label>
+                    
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" Margin="12,10,12,5" Opacity="0.3" Color="Gray" HeightRequest="1"></BoxView>
+
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="20,14,6,6">
+
+                    <Grid RowSpacing="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="9*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <Label IsVisible="true" Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" 
+                               x:Name="lblConfirmPhone" Text="" FontAttributes="Bold" TextColor="DarkBlue" >
+
+                        </Label>
+                        <Image IsVisible="true" x:Name="imgTickPhone" Grid.Row="0" Grid.Column="0" Source="greenTick.png" Aspect="AspectFit" HeightRequest="12"></Image>
+                        <Label IsVisible="true" Margin="5,0,0,0" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" x:Name="lblConfirmEmail" Text="" FontAttributes="Bold" TextColor="DarkBlue" >
+
+                        </Label>
+                        <Image IsVisible="True" x:Name="imgTickEmail" Grid.Row="1" Grid.Column="0" Source="greenTick.png" Aspect="AspectFit" HeightRequest="12"></Image>
+                        
+                    </Grid>
+
+                    
+
+
+                </StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" Margin="12,10,12,5" Opacity="0.3" Color="Gray" HeightRequest="1"></BoxView>
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="20,10,6,6">
+
+                    <Label x:Name="lblBanUser" Text="Bu kullanıcıyı engelle" TextColor="DarkGray" HorizontalOptions="Center" FontAttributes="Bold"
+                           Margin="0,7,0,10"></Label>
+                    <Label x:Name="lblReportUser" Text="Bu kullanıcıyı bildir" TextColor="Red" HorizontalOptions="Center" FontAttributes="Bold"
+                           Margin="0,7,0,10"></Label>
+
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

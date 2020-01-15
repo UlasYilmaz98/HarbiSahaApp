@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.OpponentAdvertCreatingPages.CreateOpponentAdvertStep2"
+              xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout x:Name="layoutSection2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,5,8,0"
+                      >
+
+                <StackLayout x:Name="stackHeaders2">
+
+                    <Label x:Name="lblMainText" Text="Şimdi Takımın için maç ilanı oluştur!" Margin="0,0,16,8" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                    <Label x:Name="lblSubText" Text="Kolayca bir maç ilanı oluşturarak takımın için uygun bir rakip bul!"
+                     TextColor="#636262" FontSize="Small"></Label>
+
+                </StackLayout>
+                <StackLayout x:Name="layoutDate" HorizontalOptions="FillAndExpand" Margin="12,8,8,0" >
+                    <Label Text="Maç için takımına uygun tarihi belirle." FontSize="Small"></Label>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,3,0,0">
+                        <Frame x:Name="frameDatePicker" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Controls:XDatePicker x:Name="datePickerDate"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,10,0,10" 
+                                                  FontAttributes="Bold" FontSize="Medium">
+                            </Controls:XDatePicker>
+
+                        </Frame>
+
+
+
+
+
+                    </StackLayout>
+
+
+
+                </StackLayout>
+                <StackLayout x:Name="layoutTime" HorizontalOptions="FillAndExpand" Margin="12,8,8,0" >
+                    <Label Text="Takımın hangi saatler arası müsait?"></Label>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,3,0,0">
+                        <Frame x:Name="frameTimePicker1" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Controls:XTimePicker x:Name="timePicker1"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="50,10,0,10" 
+                                                  FontAttributes="Bold" FontSize="Medium">
+
+                            </Controls:XTimePicker>
+
+                        </Frame>
+
+                        <Label Text=" - " HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="Medium" FontAttributes="Bold" TextColor="Black" ></Label>
+
+                        <Frame x:Name="frameTimePicker2" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Controls:XTimePicker x:Name="timePicker2"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="50,10,0,10" 
+                                                  FontAttributes="Bold" FontSize="Medium">
+
+                            </Controls:XTimePicker>
+
+                        </Frame>
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+               
+
+                <StackLayout x:Name="layoutButtons" HorizontalOptions="FillAndExpand" Margin="9,1,9,5" >
+                    <!--<Label Text="Tarih ve saat seçimine devam et" FontAttributes="Bold" TextColor="DeepSkyBlue"
+                               HorizontalOptions="Center" TextDecorations="Underline" FontSize="Medium" ></Label>-->
+                    <Button x:Name="btnForward" Text="DEVAM ET" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" BorderWidth="0.8" BorderColor="Black" BackgroundColor="Transparent"
+                            TextColor="Black" Padding="0" FontAttributes="Bold" FontSize="Medium" Clicked="BtnForward_Clicked">
+                    </Button>
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

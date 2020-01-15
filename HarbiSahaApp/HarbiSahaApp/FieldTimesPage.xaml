@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.FieldTimesPage"
+             xmlns:customControls="clr-namespace:HarbiSahaApp.CustomControls"
+            >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5,5,5,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="55*"></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition> 
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--<Button Grid.Row="0" Grid.Column="0"  x:Name="btnBack" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent" Clicked="BtnBack_Clicked"></Button>-->
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="12" BorderColor="#2dbefc" HorizontalOptions="FillAndExpand"
+                       Margin="0" Padding="6,3,3,3" BackgroundColor="Transparent">
+                    <customControls:XDatePicker x:Name="datePickerDate" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             DateSelected="DatePickerDate_DateSelected"  FontAttributes="Bold" TextColor="#013a52"></customControls:XDatePicker>
+                </Frame>
+                <!--<Button Grid.Row="0" Grid.Column="2"  x:Name="btnForward" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent" Clicked="BtnForward_Clicked"></Button>-->
+                <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" CornerRadius="12" BorderColor="#2dbefc" HorizontalOptions="FillAndExpand"
+                       Margin="0" Padding="3" BackgroundColor="Transparent">
+                    <customControls:XPicker BackgroundColor="Transparent" SelectedIndexChanged="PickerFieldZones_SelectedIndexChanged" x:Name="pickerFieldZones" HorizontalOptions="FillAndExpand" 
+                                        FontAttributes="Bold" TextColor="#013a52" Margin="15,0,0,0"    ></customControls:XPicker>
+                </Frame>
+                <CollectionView x:Name="colMatches" SelectionMode="Single"  VerticalOptions="CenterAndExpand"
+                                Margin="4,8,4,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" SelectionChanged="ColMatches_SelectionChanged"
+                               IsEnabled="True"  >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout HorizontalItemSpacing="6" VerticalItemSpacing="6" Orientation="Vertical" Span="4"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsEnabled="{Binding IsEnabled}">
+                                <Frame Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                   CornerRadius="15" BorderColor="{Binding BorderColor}" Opacity="{Binding Opacity}" IsEnabled="{Binding IsEnabled}"
+                                       BackgroundColor="{Binding BgColor}" HasShadow="False" >
+
+                                    <Label Text="{Binding TimeStr}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                      FontSize="Medium" Margin="0,9,0,9" Opacity="{Binding Opacity}" TextColor="{Binding TextColor}" ></Label>
+
+                                    
+                                   
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                           Text="Kapora" TextColor="#013a52" FontAttributes="Bold" FontSize="Medium"></Label>
+                    <Label   Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                        x:Name="lblKapora" FontAttributes="Bold" FontSize="Large"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                           Text="Sahada Ödenecek" FontSize="Medium" TextColor="#013a52" FontAttributes="Bold"></Label>
+                    <Label   Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                        x:Name="lblTotal" FontAttributes="Bold" FontSize="Large"></Label>
+
+
+                </Grid>
+                <Button Grid.Row="4" Grid.Column="1" BackgroundColor="#2dbefc"  x:Name="btnContinue"
+                        CornerRadius="14" TextColor="White" FontAttributes="Bold"
+                        HorizontalOptions="FillAndExpand" Margin="5,0,5,2" Text="Bu saati kirala" IsEnabled="False"
+                        Clicked="BtnContinue_Clicked"></Button>
+                
+                
+            </Grid>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

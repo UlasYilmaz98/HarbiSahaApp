@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.MyAdvertDetailsPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Katılma istekleri">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+            <StackLayout x:Name="LAYOUTAdvert" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,8,12,6">
+                <Label Text="Oyuncu İlanı"  TextColor="#33363d" FontSize="Large" Margin="0,0,0,0"></Label>
+                <Label x:Name="lblDateAndTime"  TextColor="#02319e" Text="" FontSize="Large" Margin="0,0,0,0"></Label>
+                <Label x:Name="lblCityAndTown" TextColor="#02319e" Text="" FontSize="Large" Margin="0,0,0,0"></Label>
+                <Label x:Name="lblNeededPosition"  TextColor="#02319e" Text="" FontSize="Large" Margin="0,0,0,0"></Label>
+                
+            </StackLayout>
+            <Label Margin="12,8,12,6" Text="Bu ilan için henüz bir istek yok." IsVisible="False" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+            <StackLayout x:Name="layoutRequests" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,8,12,6">
+
+                <CollectionView x:Name="collectionView0" SelectionMode="Single" HorizontalOptions="CenterAndExpand"  
+                                >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout  Orientation="Vertical" Span="1"  VerticalItemSpacing="5" ></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowSpacing="0" Margin="0" Padding="0">
+                                <Frame  VerticalOptions="FillAndExpand" Margin="0,0,0,0" Padding="0" BackgroundColor="White"
+                           CornerRadius="0"  IsClippedToBounds="False" BorderColor="#d9d9d9" HasShadow="False" HeightRequest="130" HorizontalOptions="FillAndExpand"
+                              IsEnabled="{Binding FrameEnabled}" Opacity="{Binding FrameOpacity}" >
+                                    <StackLayout x:Name="inner1" Margin="6,4,4,4">
+
+
+                                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+
+                                            <image:CircleImage Source="{Binding PhotoPath}" Aspect="AspectFill"
+                                                               HeightRequest="40" WidthRequest="40" Margin="0,6,0,6"></image:CircleImage>
+                                            <Label Margin="8,6,0,6" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"></Span>
+                                                        <Span FontAttributes="Bold" Text=", maça katılmak istiyor."></Span>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            
+                                            
+                                        </StackLayout>
+                                        
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Button Grid.Row="0" Grid.Column="1" x:Name="btnAccept"
+                                                    HorizontalOptions="FillAndExpand" BorderWidth="1" BorderColor="#2dbefc" FontAttributes="Bold"
+                                                    Text="KABUL ET" TextColor="#2dbefc" Margin="5,0,0,5" BackgroundColor="White"
+                                                    Clicked="BtnAccept_Clicked" ></Button>
+                                            <Button Grid.Row="0" Grid.Column="2" x:Name="btnRefuse" FontAttributes="Bold"
+                                                    HorizontalOptions="FillAndExpand" BorderWidth="1" BorderColor="Gray"
+                                                    Text="GERİ ÇEVİR" TextColor="Gray" Margin="5,0,0,5" BackgroundColor="White"
+                                                    Clicked="BtnRefuse_Clicked"  ></Button>
+                                            
+                                            
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+                
+                
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

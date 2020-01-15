@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.PlayerAdvertDetailsPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="İlan Detayı"
+             >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85*"></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ScrollView Grid.Row="0">
+
+                    <StackLayout Margin="12,12,10,8" HorizontalOptions="FillAndExpand">
+
+                        <Label FontSize="Large" TextColor="#3E585D" FontAttributes="Bold" x:Name="lblDate" Margin="0,0,0,12" ></Label>
+
+                        <Grid Margin="0,0,0,4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblTime" TextColor="#3E585D" Text=""  FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="End"></Label>
+
+                            <Image Source="clockIcon.png" HeightRequest="32" Aspect="AspectFit" Grid.Row="0" Grid.Column="3" 
+                                    HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" VerticalOptions="End"></Image>
+                            <Label Grid.Row="0"  Grid.Column="4" Grid.ColumnSpan="2" x:Name="lblFinishTime" TextColor="#3E585D" Text=""  FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="End"></Label>
+                            <BoxView Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Color="#3E585D" HorizontalOptions="FillAndExpand" HeightRequest="2" CornerRadius="15"></BoxView>
+                            <Label Text="Başlangıç" TextColor="#B5B7B6" FontSize="Small" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Start"
+                                    HorizontalOptions="Center"></Label>
+                            <Label Text="Bitiş" TextColor="#B5B7B6" FontSize="Small" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalOptions="Start"
+                                    HorizontalOptions="Center"></Label>
+                            <Image Source="footballBall.png" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Aspect="AspectFit"
+                                   HeightRequest="48" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                            <Label Text="Şehir" TextColor="#B5B7B6" FontSize="Small" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="End"
+                                    HorizontalOptions="Center"></Label>
+                            <Label Text="İlçe/Semt" TextColor="#B5B7B6" FontSize="Small" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" VerticalOptions="End"
+                                    HorizontalOptions="Center"></Label>
+
+                            <BoxView Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Color="#3E585D" HorizontalOptions="FillAndExpand" HeightRequest="2" CornerRadius="15"></BoxView>
+                            <Image Source="locationIcon.png" HeightRequest="32" Aspect="AspectFit" Grid.Row="5" Grid.Column="3" 
+                                    HorizontalOptions="CenterAndExpand"  Margin="0,0,0,0" VerticalOptions="Start"></Image>
+                            <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblCityJust" TextColor="#3E585D" Text=""  FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"></Label>
+                            <Label Grid.Row="5"  Grid.Column="4" Grid.ColumnSpan="2" x:Name="lblTownJust" TextColor="#3E585D" Text=""  FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"></Label>
+                            
+                        </Grid>
+                        <Label FontSize="Large" TextColor="#3E585D" FontAttributes="Bold" x:Name="lblFieldName" Margin="0,0,0,10" ></Label>
+                        <Grid Margin="5,0,5,0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" TextColor="#B5B7B6" Text="Mevki Tercihi" FontAttributes="Bold" FontSize="Small"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="lblNeededPosition" TextColor="#3E585D" Text="Mevki Tercihi:" FontAttributes="Bold" FontSize="Medium"  ></Label>
+                            <Label Grid.Row="0" Grid.Column="2" TextColor="#B5B7B6" Text="Kişi başına" FontAttributes="Bold" FontSize="Small" HorizontalOptions="EndAndExpand"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" x:Name="lblPrice" TextColor="#3E585D" Text="Mevki Tercihi:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="EndAndExpand"  ></Label>
+
+
+                        </Grid>
+
+                        <BoxView Margin="5,15,5,15" HeightRequest="0.5" HorizontalOptions="FillAndExpand" Color="LightGray" ></BoxView>
+
+                        <Grid Margin="5,0,5,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75*"></ColumnDefinition>
+                                <ColumnDefinition Width="25*"></ColumnDefinition>
+                                
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="tapGoProfile" Tapped="TapVisitProfile_Tapped"></TapGestureRecognizer>
+                            </Grid.GestureRecognizers>
+
+                            <Label x:Name="lblUserName" FontSize="Medium" FontAttributes="Bold" TextColor="#3E585D"
+                                   Grid.Row="0" Grid.Column="0" VerticalOptions="EndAndExpand" ></Label>
+                            <Label x:Name="lblPointAndCountPoints" FontSize="Small" FontAttributes="Bold" TextColor="#B5B7B6"
+                                   Grid.Row="1" Grid.Column="0" VerticalOptions="StartAndExpand" ></Label>
+
+                            <image:CircleImage Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="imgProfilePicture" Source="" HeightRequest="96" Aspect="AspectFill"
+                                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></image:CircleImage>
+                           
+
+                        </Grid>
+
+                        <BoxView Margin="5,15,5,15" HeightRequest="0.5" HorizontalOptions="FillAndExpand" Color="LightGray" ></BoxView>
+
+                        <StackLayout Margin="5,0,5,0" Orientation="Horizontal">
+
+                            <Image  VerticalOptions="Center" Source="messages.png" Aspect="AspectFit" HeightRequest="24" Margin="2,0,8,0"></Image>
+
+                            <Label  x:Name="lblMessageToUser" FontSize="Medium" FontAttributes="Bold" TextColor="#2dbefc"
+                       Text=""  VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="tapVisitProfile" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+
+                        </StackLayout>
+
+                        <BoxView Margin="5,15,5,15" HeightRequest="0.5" HorizontalOptions="FillAndExpand" Color="LightGray" ></BoxView>
+
+                        <Label Text="Tesisin Tam Konumu" TextColor="#3E585D" FontAttributes="Bold" Margin="5,0,5,4"></Label>
+                        <Label x:Name="lblFieldBaseAdress" TextColor="#B5B7B6" Margin="5,0,5,4"></Label>
+
+                        <BoxView Margin="5,15,5,15" HeightRequest="0.5" HorizontalOptions="FillAndExpand"
+                                 Color="LightGray" ></BoxView>
+
+
+                        <Label Text="İlan Notları" TextColor="#3E585D" FontAttributes="Bold" Margin="5,0,5,4"></Label>
+                        <Label x:Name="lblAdvertInfo" TextColor="#B5B7B6" Margin="5,0,5,4"></Label>
+                    </StackLayout>
+
+                    
+                    
+                    
+                    <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Frame x:Name="frmTop" Margin="8,12,8,8" CornerRadius="15" IsClippedToBounds="True" BackgroundColor="#f5f5f5" Padding="0">
+                            <StackLayout x:Name="layoutTop" HorizontalOptions="FillAndExpand" Margin="6,10,12,5">
+
+                                <StackLayout Orientation="Horizontal" Margin="3,0,3,5">
+                                    <Image Source="calendarIcon.png" HeightRequest="24" Aspect="AspectFit" Margin="0,0,5,5"></Image>
+                                    <Label x:Name="lblDate" Text="" TextColor="#33363d" FontAttributes="Bold" FontSize="Medium"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,3,5">
+                                    <Image Source="clockIcon.png" HeightRequest="24" Aspect="AspectFit" Margin="0,0,5,5"></Image>
+                                    <Label x:Name="lblTime" TextColor="#33363d" Text=""  FontAttributes="Bold" FontSize="Medium"></Label>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" Margin="0,0,3,5">
+                                    <Image Source="locationIcon.png" HeightRequest="24" Aspect="AspectFit" Margin="0,0,5,5"></Image>
+                                    <Label x:Name="lblCityAndTown" TextColor="#33363d" Text="" FontAttributes="Bold" FontSize="Medium"  >
+                                    </Label>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" Margin="0,0,3,5">
+                                    <Image Source="stadiumIcon.png" HeightRequest="24" Aspect="AspectFit" Margin="0,0,5,5"></Image>
+                                    <Label x:Name="lblFieldName" TextColor="#33363d" Text="" FontAttributes="Bold" FontSize="Medium"  >
+                                    </Label>
+
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="0,0,3,5">
+                                    <Image Source="footballShirt.png" HeightRequest="24" Aspect="AspectFit" Margin="0,0,5,5"></Image>
+                                    <Label x:Name="lblNeededPosition" TextColor="#33363d" Text="Mevki Tercihi:" FontAttributes="Bold" FontSize="Medium"  >
+                                    </Label>
+
+                                </StackLayout>
+
+                                
+
+
+                            </StackLayout>
+                        </Frame>
+
+                        <StackLayout Margin="12,4,6,5" HorizontalOptions="FillAndExpand" x:Name="layoutMiddle">
+
+                            <Label Text="İlan Sahibi" TextColor="#404040" FontAttributes="Bold" Margin="0,0,0,8"></Label>
+
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <image:CircleImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="imgProfilePicture" Source="" HeightRequest="64" Aspect="AspectFill"></image:CircleImage>
+                                <Label x:Name="lblUserName" Text="" Grid.Row="0" Grid.Column="1" 
+                           Margin="8,0,0,0" VerticalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Medium"></Label>
+                                
+                                <Label x:Name="lblPointAndCountPoints" Text="" Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                <Label x:Name="lbluserAge" Grid.Row="1" Grid.Column="1" Margin="8,0,0,0"></Label>
+
+                            </Grid>
+
+                            <Label Text="İlan Notu" TextColor="#404040" FontAttributes="Bold" Margin="0,9,0,8"></Label>
+
+                            <Label x:Name="lblAdvertInfo" TextColor="Black" Margin="6,5,0,8"></Label>
+
+                            --><!--<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" Opacity="0.5"></BoxView>--><!--
+
+
+
+
+
+
+                        </StackLayout>
+
+                        <Frame x:Name="frm1Bot" Margin="8,12,8,8" CornerRadius="15" IsClippedToBounds="True" BackgroundColor="#f5f5f5" Padding="0">
+
+                            <StackLayout Margin="6,4,6,5" HorizontalOptions="FillAndExpand" x:Name="layoutBottomMiddle">
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="9*"></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Row="0" VerticalOptions="Center" Grid.Column="0" Source="user.png" Aspect="AspectFit" HeightRequest="24" HorizontalOptions="Center"></Image>
+                                    <Image Grid.Row="1" VerticalOptions="Center" Grid.Column="0" Source="messages.png" Aspect="AspectFit" HeightRequest="24" HorizontalOptions="Center"></Image>
+
+                                    <Label Grid.Row="0" Grid.Column="1" x:Name="lblVisitProfile" FontSize="Medium" FontAttributes="Bold" TextColor="#2dbefc"
+                       Text=""  Margin="5,5,0,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer x:Name="tapVisitProfile" Tapped="TapVisitProfile_Tapped"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                    <Label Grid.Row="1" Grid.Column="1" x:Name="lblMessageToUser" FontSize="Medium" FontAttributes="Bold" TextColor="#2dbefc"
+                       Text=""  Margin="5,5,0,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                </Grid>
+
+                            </StackLayout>
+
+                        </Frame>
+
+
+                      
+
+                        <StackLayout x:Name="layoutBottom" Margin="12,5,6,0">
+
+                            <Label Text="Tesisin Tam Konumu" TextColor="#404040" FontAttributes="Bold" Margin="0,0,0,4"></Label>
+                            <Label x:Name="lblFieldBaseAdress" TextColor="Black"></Label>
+
+                        </StackLayout>
+
+                    </StackLayout>-->
+                </ScrollView>
+
+                <StackLayout Grid.Row="1" BackgroundColor="#2dbefc" HorizontalOptions="FillAndExpand" Margin="0,10,0,0">
+
+                    <Button x:Name="btnAnswerAdvert" BackgroundColor="White"  BorderColor="#2dbefc"
+                         TextColor="#2dbefc" FontAttributes="Bold" Margin="15,5,15,5" HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand" Text="MAÇA KATILMAK İÇİN BAŞVUR" Clicked="BtnAnswerAdvert_Clicked"
+                            CornerRadius="20" ></Button>
+
+                </StackLayout>
+
+            </Grid>
+            
+
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

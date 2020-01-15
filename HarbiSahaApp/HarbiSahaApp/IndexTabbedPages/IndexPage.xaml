@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.IndexTabbedPages.IndexPage"
+             xmlns:local="clr-namespace:HarbiSahaApp.IndexTabbedPages"
+             >
+
+    
+
+    <ContentPage>
+
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style TargetType="StackLayout">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Transparent" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout x:Name="layoutTop" Margin="12,12,0,8" BackgroundColor="White">
+                    <Label Text="Hoşgeldin Ulaş.Şimdi ne yapmak istediğini seç ve maça başla!" Margin="0,0,16,8" TextColor="#636262" FontSize="Large" FontAttributes="Bold"></Label>
+
+                    <ScrollView Orientation="Both" WidthRequest="180" HorizontalScrollBarVisibility="Never">
+                        <FlexLayout >
+                            <Frame VerticalOptions="FillAndExpand" Margin="8,0,8,0" Padding="0" BackgroundColor="White"
+                           CornerRadius="5" IsClippedToBounds="True" BorderColor="#f2f2f2" HasShadow="False" HeightRequest="160" WidthRequest="140">
+                                <FlexLayout Direction="Column">
+                                    <StackLayout x:Name="innerImage1">
+                                        <Image Source="indexImage1.jpg"  HorizontalOptions="Fill" Aspect="AspectFill"></Image>
+                                        <StackLayout Margin="0" Padding="0" BackgroundColor="Transparent">
+                                            <Label  Text="Ekip mi yok? Hemen kendine uygun bir maç bul!" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </FlexLayout>
+                            </Frame>
+
+
+                            <Frame VerticalOptions="FillAndExpand" Margin="0,0,8,0" Padding="0" BackgroundColor="White" 
+                           CornerRadius="5" IsClippedToBounds="True" BorderColor="#f2f2f2" HasShadow="False"  HeightRequest="160" WidthRequest="140">
+                                <FlexLayout Direction="Column">
+                                    <StackLayout x:Name="innerImage2">
+                                        <Image Source="indexImage2.jpeg"  Aspect="AspectFill"></Image>
+                                        <StackLayout Margin="0" Padding="0">
+                                            <Label Text="Adam mı eksik? Uygun bir oyuncu bul!" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </FlexLayout>
+
+                            </Frame>
+                            <Frame VerticalOptions="FillAndExpand" Margin="0,0,8,0" Padding="0" BackgroundColor="White" 
+                           CornerRadius="5" IsClippedToBounds="True" BorderColor="#f2f2f2" HasShadow="False"  HeightRequest="160" WidthRequest="140">
+                                <FlexLayout Direction="Column">
+                                    <StackLayout x:Name="innerImage3">
+                                        <Image Source="indexImage3.jpg"  Aspect="AspectFill"></Image>
+                                        <StackLayout Margin="0" Padding="0">
+                                            <Label Text="Takımına göre dişli bir rakip bul!" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </FlexLayout>
+
+                            </Frame>
+                            <Frame VerticalOptions="FillAndExpand" Margin="0,0,8,0" Padding="0" BackgroundColor="White" 
+                           CornerRadius="5" IsClippedToBounds="True" BorderColor="#f2f2f2" HasShadow="False" HeightRequest="160" WidthRequest="140">
+                                <FlexLayout Direction="Column">
+                                    <StackLayout x:Name="innerImage4">
+                                        <Image Source="indexImage4.jpg"  Aspect="AspectFill"></Image>
+                                        <StackLayout Margin="0" Padding="0">
+                                            <Label Text="Harbi Saha farkıyla kolayca halı saha kirala!" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </FlexLayout>
+
+                            </Frame>
+
+
+                        </FlexLayout>
+
+                    </ScrollView>
+
+
+
+                </StackLayout>
+                <StackLayout x:Name="layoutMiddle" Margin="12,8,12,8">
+
+                    <Label x:Name="lblMainText" Text="Bu sahalar ilgini çekebilir" Margin="0,0,16,8" TextColor="#636262" FontSize="Large" FontAttributes="Bold"></Label>
+                    <Label x:Name="lblSubText" Text="Şehrindeki üst düzey futbol tesislerini Harbi Saha ile hızlı ve kolay bir şekilde kirala."
+                     TextColor="#636262" FontSize="Small"   ></Label>
+                    
+
+                    <AbsoluteLayout>
+                        <CollectionView HeightRequest="420"   x:Name="collectionView1" SelectionMode="Single" HorizontalOptions="CenterAndExpand"  
+                                 Margin="0,3,0,0" >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout  Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" ></GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Spacing="1">
+                                        <Frame x:Name="frmImage" CornerRadius="5" Padding="0" Margin="0" BackgroundColor="Transparent" BorderColor="Transparent"
+                                   IsClippedToBounds="False" HeightRequest="100">
+                                            <Image Aspect="AspectFill" Source="{Binding PhotoPath}"></Image>
+                                        </Frame>
+                                        <Label Text="{Binding CityAndTown}" TextColor="#78819e" FontAttributes="Bold"
+                                                FontSize="Small"></Label>
+                                        <Label Text="{Binding PlaceName}" TextColor="Black" FontAttributes="Bold"
+                                                FontSize="Small"></Label>
+                                        <Label Text="{Binding Cost}" FontSize="Small" TextColor="Black"></Label>
+                                        <Label Text="{Binding Rate}" FontSize="Small" TextColor="#78819e"
+                                                FontAttributes="Bold"></Label>
+                                        <!--<Frame x:Name="ftmDetails" HeightRequest="100" BackgroundColor="White" BorderColor="White"
+                                           CornerRadius="0" Margin="0" Padding="0">
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            
+                                        </StackLayout>
+                                    </Frame>-->
+
+
+                                    </StackLayout>
+
+
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </AbsoluteLayout>
+                    <Button  x:Name="btnShowAllFields" HorizontalOptions="FillAndExpand" Text="Tüm Sahaları Göster"
+                            FontAttributes="Bold" BackgroundColor="Transparent" BorderColor="#78819e"
+                            TextColor="#78819e" BorderWidth="1.4" ></Button>
+
+
+
+
+
+
+                </StackLayout>
+                <StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>
+    
+</TabbedPage>

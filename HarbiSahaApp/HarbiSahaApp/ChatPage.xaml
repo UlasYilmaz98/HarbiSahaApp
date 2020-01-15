@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.ChatPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout IsVisible="False"  x:Name="ActivityLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="10" Padding="7">
+                <Label Text="İlanlar yükleniyor..." TextColor="#2dbefc"></Label>
+                <AbsoluteLayout HorizontalOptions="Center">
+                    <ActivityIndicator x:Name="activity"  
+                       IsRunning="True"  
+                       IsEnabled="True"  
+                       IsVisible="True"  
+                       Color="#2dbefc"  
+                       BackgroundColor="Transparent"/>
+                </AbsoluteLayout>
+            </StackLayout>
+
+            <StackLayout IsVisible="False" x:Name="layoutMain" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"></RowDefinition>
+                        <RowDefinition Height="7*"></RowDefinition>
+                        <RowDefinition Height="73*"></RowDefinition>
+                        <RowDefinition Height="10*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <StackLayout Grid.Row="0" x:Name="layoutAdvert" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Frame CornerRadius="0" BorderColor="#e8e8e8" BackgroundColor="White" Margin="0" Padding="5,2,5,2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <Grid RowSpacing="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Margin="3,5,0,0" Grid.Row="0" Grid.Column="0" x:Name="lblAdvertFirstLine" TextColor="#2b4470" FontAttributes="Bold"></Label>
+                                <Label Margin="3,0,0,0" Grid.Row="1" Grid.Column="0" x:Name="lblAdvertSecondLine" TextColor="#bfbfbf" FontAttributes="Bold"></Label>
+                                <Label Text="İLANA BAK" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"
+                                   TextColor="#2dbefc">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="tapSeeAdvert" Tapped="TapSeeAdvert_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                            </Grid>
+
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" x:Name="layoutWarning" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Margin="8,0,0,0" Text="Mesajlar incelenebilir." TextColor="#bfbfbf" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                            <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Source="questionMarkIcon.png" HeightRequest="28" WidthRequest="28" ></Image>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Margin="5,0,5,0" x:Name="layoutMessages" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <CollectionView x:Name="colMessages" SelectionMode="Single" Margin="0,0,0,0"
+                                    ItemsSource="{Binding .}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"     >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout  Orientation="Vertical" Span="1" VerticalItemSpacing="5" ></GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="6*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="1" FontSize="Micro" TextColor="#c4c4c4" Text="{Binding Name}" IsVisible="{Binding NameTextVisibility}"
+                               HorizontalOptions="{Binding NameTextAlignment}"></Label>
+                                        <image:CircleImage Grid.Row="1" Grid.Column="{Binding ProfilePictureColumn}" HorizontalOptions="Center"  Aspect="AspectFit"  x:Name="imgProfilePicture" HeightRequest="32"
+                                 WidthRequest="32" Margin="0" Source="{Binding PhotoPath}">
+                                            <image:CircleImage.GestureRecognizers>
+
+                                            </image:CircleImage.GestureRecognizers>
+                                        </image:CircleImage>
+                                        <Frame CornerRadius="10" IsClippedToBounds="True" Grid.Row="1" Grid.Column="1"
+                               BackgroundColor="{Binding frameBackgroundColor}" BorderColor="{Binding frameBackgroundColor}"
+                               Margin="0" Padding="0">
+
+                                            <Label Margin="8,5,8,5" Text="{Binding Message}" TextColor="{Binding TextColor}"></Label>
+
+                                        </Frame>
+                                        <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="End" TextColor="{Binding SituationTextColor}"
+                               Text="{Binding Situation}"></Label>
+                                        <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" TextColor="#bfbfbf"
+                               Text="{Binding Time}"></Label>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White"
+                           BorderColor="#bfbfbf" Margin="0" Padding="0">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5,3,5,3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Entry x:Name="txtMessage" Grid.Row="0" Grid.Column="0" Placeholder="Mesajını Gir" PlaceholderColor="#bfbfbf" FontAttributes="Bold" 
+                                   HorizontalOptions="FillAndExpand" VerticalOptions="Center" FontSize="Medium"></Entry>
+                                <Button Grid.Row="0" Grid.Column="1" CornerRadius="10" Text="GÖNDER" BackgroundColor="#2dbefc" TextColor="White"
+                                    FontAttributes="Bold" Clicked="SendMessage" Margin="5,5,5,5"></Button>
+
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

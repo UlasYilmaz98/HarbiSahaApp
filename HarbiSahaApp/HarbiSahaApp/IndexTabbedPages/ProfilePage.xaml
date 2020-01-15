@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.IndexTabbedPages.ProfilePage"
+             Title="Profil"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             IconImageSource="user.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="layoutProfilePage">
+                    <StackLayout BackgroundColor="#2dbefc">
+                        <StackLayout x:Name="layoutImage" HorizontalOptions="CenterAndExpand" Margin="0,4,0,0">
+
+                            <image:CircleImage HorizontalOptions="Center" BorderColor="#00a6e0" BorderThickness="2"
+                                           x:Name="imgProfilePicture" HeightRequest="236" WidthRequest="180" Margin="0" Aspect="AspectFill" >
+                                <image:CircleImage.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="tapProfilePicture" Tapped="TapProfilePicture_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+
+                                </image:CircleImage.GestureRecognizers>
+                                <image:CircleImage.Source>
+                                    <UriImageSource  CachingEnabled="True">
+                                        
+                                    </UriImageSource> 
+                                </image:CircleImage.Source>
+                            </image:CircleImage>
+
+                        </StackLayout>
+                        <StackLayout x:Name="layoutUsername" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="lblName" Text="ULAŞ"  FontSize="Large" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                        <StackLayout x:Name="layoutDegree" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="lblDegree" Text="Çaylak" HorizontalOptions="Center" FontSize="Small" TextColor="White" FontAttributes="Italic" Margin="0,0,0,5"  >
+
+                            </Label>
+                        </StackLayout>
+                        <Grid RowSpacing="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="lblHarbiSahaPoints" Text="150" FontAttributes="Bold" FontSize="Title" TextColor="White" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"
+                           VerticalOptions="Center"></Label>
+                            <Label Text="TOPLAM PUAN" TextColor="White" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                            <Label x:Name="lblAveragePoints" Text="4.2" FontAttributes="Bold" FontSize="Title" TextColor="White" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
+                           VerticalOptions="Center"></Label>
+                            <Label Text="ORTALAMA PUAN" TextColor="White" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                            <Label x:Name="lblCompletedMatches" FontAttributes="Bold" FontSize="Title" TextColor="White" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
+                           VerticalOptions="Center" Text="8"></Label>
+                            <Label Text="OYNANAN MAÇ" FontSize="Small" TextColor="White" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                        </Grid>
+                    </StackLayout>
+
+
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Margin="20,6,6,6">
+
+                        <StackLayout x:Name="layoutTopMenu" Margin="0,15,0,15" HorizontalOptions="FillAndExpand">
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image x:Name="imgFootballBall" Aspect="AspectFit" Source="footballBall.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label x:Name="lookAdverts" Text="Maçlarıma Gözat!"  FontSize="Medium" Grid.Row="0" Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="tapLookAdverts" Tapped="TapLookAdverts_Tapped">
+
+                                        </TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image x:Name="imgFootballShirt" Aspect="AspectFit" Source="footballShirt.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label x:Name="lookMyTeam" Text="Takımım"  FontSize="Medium"  Grid.Row="0" Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="MyTeamTapped" NumberOfTapsRequired="1" Tapped="MyTeamTapped_Tapped"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+
+
+                        </StackLayout>
+                        <Label Text="HESAP AYARLARI" TextColor="LightGray" Margin="0,8,0,8"></Label>
+                        <StackLayout x:Name="layoutMiddleMenu" Margin="0,5,0,10" HorizontalOptions="FillAndExpand">
+
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image x:Name="imgPersonalInfos" Aspect="AspectFit" Source="user.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label x:Name="lblPersonalInfos" Text="Kişisel Bilgiler"  FontSize="Medium"  Grid.Row="0" Grid.Column="0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="tapPersonalInfos" Tapped="TapPersonalInfos_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image x:Name="imgPaymentInfos" Aspect="AspectFit" Source="creditCard.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label x:Name="lblPaymentInfos" Text="Ödemelerim"  FontSize="Medium"  Grid.Row="0" Grid.Column="0"></Label>
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Aspect="AspectFit" Source="stadium.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label Text="Favori Sahalarım"  FontSize="Medium"  Grid.Row="0" Grid.Column="0"></Label>
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Aspect="AspectFit" Source="emailIcon.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label Text="İletişim Bilgilerim"  FontSize="Medium"  Grid.Row="0" Grid.Column="0"></Label>
+                            </Grid>
+                            <BoxView Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Aspect="AspectFit" Source="locked.png" HeightRequest="12" Grid.Row="0" Grid.Column="1"></Image>
+                                <Label Text="Engellenen Kullanıcılar"  FontSize="Medium"  Grid.Row="0" Grid.Column="0"></Label>
+                            </Grid>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Margin="20,10,6,6">
+
+                        <Label Text="HAKKIMIZDA" TextColor="LightGray"></Label>
+                        <Grid ColumnSpacing="8" RowSpacing="14">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <Label x:Name="lblHelp" TextColor="#2dbefc"  FontSize="Medium" Text="Yardım" Grid.Row="0" Grid.Column="0"></Label>
+
+                            <Label x:Name="lblTermsAndConditions" TextColor="#2dbefc" FontSize="Medium" Text="Şartlar ve Koşullar" Grid.Row="1" Grid.Column="0"></Label>
+
+                            <Label x:Name="lblPrivacyPolicy" TextColor="#2dbefc" FontSize="Medium" Text="Gizlilik Politikası" Grid.Row="2" Grid.Column="0"></Label>
+
+                            <Label x:Name="lblExit" FontSize="Medium" TextColor="#2dbefc" Text="Çıkış Yap" HorizontalOptions="CenterAndExpand" Grid.Row="3" Grid.Column="0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="tapExit" Tapped="TapExit_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                        </Grid>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                
+                
+                <!--LOGIN OR REGISTER PAGEE-->
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" 
+                             IsVisible="False" x:Name="layoutNotUser">
+
+                  
+
+                    <StackLayout x:Name="LayoutStep1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Margin="12,12,20,6" Text="Harbi Saha'ya katılın" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                        <Label Margin="12,6,20,6" Text="Bugün Harbi Saha'ya kaydolarak sahalara adımınızı atın!"></Label>
+
+                        <StackLayout Margin="12,20,8,1">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="emailIcon.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryEmail"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="E-posta Adresi" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                          Completed="EntryEmail_Completed" TextChanged="EntryEmail_TextChanged" Unfocused="EntryEmail_Unfocused"   >
+                                </Controls:XEntry>
+
+                            </Grid>
+                            <BoxView x:Name="boxViewMail" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <!--<Label x:Name="lblWarningMail" FontAttributes="Bold" Text="Lütfen e-postanızın doğru girilip girilmediğini kontrol edin" IsVisible="False" TextColor="Red"></Label>-->
+                        </StackLayout>
+                        <StackLayout Margin="12,0,8,5">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locked.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryPassword"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Şifre" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                     IsPassword="True" Completed="EntryPassword_Completed"   TextChanged="EntryPassword_TextChanged" 
+                                            >
+                                </Controls:XEntry>
+
+                            </Grid>
+
+                            <BoxView x:Name="boxViewPassword" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <!--<Label x:Name="lblWarningPass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>-->
+
+                        </StackLayout>
+
+                        <StackLayout Margin="12,0,8,5">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locked.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryRePassword"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Şifre Tekrar" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                     IsPassword="True"   TextChanged="EntryRePassword_TextChanged" >
+                                </Controls:XEntry>
+
+                            </Grid>
+                            <BoxView x:Name="boxViewRePassword" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                            <!--<Label x:Name="lblWarningRePass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>-->
+                            <StackLayout x:Name="layoutWarnings" Margin="0,5,0,0" IsVisible="False">
+                                <Label x:Name="lblWarningMail" FontAttributes="Bold" Text="Lütfen e-postanızın doğru girilip girilmediğini kontrol edin" IsVisible="False" TextColor="Red"></Label>
+                                <Label x:Name="lblWarningPass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>
+                                <Label x:Name="lblWarningRePass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="Devam Et" Clicked="BtnNext_Clicked"></Button>
+                            <Button x:Name="btnHasAccount" BackgroundColor="White" TextColor="#2dbefc" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="ZATEN BİR HESABIM VAR" Clicked="BtnHasAccount_Clicked" BorderColor="#2dbefc"
+                                    BorderWidth="1"></Button>
+                        </StackLayout>
+                       
+                    </StackLayout>
+
+
+                </StackLayout>
+                
+                
+                
+                
+                
+                
+                
+
+                <!--<StackLayout x:Name="layoutLoginOrRegister" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             IsVisible="False">
+
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" x:Name="lblWelcome" Text="Hemen giriş yaparak aramıza katılın" Margin="16,10,16,8" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                        <Image Grid.Row="1" x:Name="imgLogo" Aspect="AspectFit" VerticalOptions="CenterAndExpand" Source=""></Image>
+                        <StackLayout Grid.Row="2">
+                            <Button x:Name="btnGetStarted" TextColor="White" BackgroundColor="#4e98bf" HorizontalOptions="FillAndExpand"
+                                    Margin="16,5,16,5" CornerRadius="5" Clicked="BtnGetStarted_Clicked"
+                                    Text="BAŞLAYIN"></Button>
+                        </StackLayout>
+                        
+                    </Grid>
+                    
+                    
+                    
+                </StackLayout>-->
+               
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

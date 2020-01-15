@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:HarbiSahaApp.MessagesPageTabbedPages"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.IndexTabbedPages.MessagesPage"
+             Title="Mesajlar"
+             IconImageSource="messages.png">
+    <ContentPage Title="MESAJLAR">
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Grid">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+        <ContentPage.Content>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <!--<Entry x:Name="entryUsername" Placeholder="Kullanıcı Adı"></Entry>
+            <Button Text="Join Chat" x:Name="btnJoinChat" Clicked="BtnJoinChat_Clicked"></Button>-->
+                <StackLayout x:Name="stackHeaders" HorizontalOptions="FillAndExpand" Margin="12,24,12,10">
+                    <Label Text="Gelen Kutusu"  FontAttributes="Bold" FontSize="Large"></Label>
+                    <Label Text="Maçlarınız ile ilgili mesajlar burada görünür."  FontSize="Medium"></Label>
+                </StackLayout>
+                <StackLayout Margin="12,8,12,0" HorizontalOptions="FillAndExpand">
+                    <CollectionView x:Name="lstChannels" SelectionMode="Single" Margin="0" SelectionChanged="LstChannels_SelectionChanged">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout  Orientation="Vertical" Span="1" VerticalItemSpacing="0"  ></GridItemsLayout>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25*"></ColumnDefinition>
+                                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                                        <ColumnDefinition Width="15*"></ColumnDefinition>
+
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  x:Name="imgEmailIcon"
+                                                       Aspect="AspectFill" Source="emailIcon.png" HeightRequest="50" Margin="0"
+                                                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"></Image>
+                                    <Label x:Name="lblName" Grid.Row="0" Grid.Column="1" 
+                                                 VerticalOptions="Center" Text="{Binding otherUserName}" FontSize="Medium" TextColor="#2dbefc" FontAttributes="Bold">
+                                    </Label>
+
+                                    <Label x:Name="lblFieldName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,3,0,5"
+                                                       Text="{Binding FieldName }" VerticalOptions="Center" FontAttributes="Italic"></Label>
+                                    <Label x:Name="lblDateAndTime" Grid.Row="2" Grid.Column="1" 
+                                                       VerticalOptions="Center" Text="{Binding DateAndTime}" FontAttributes="Italic" FontSize="Small"></Label>
+
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                    <Button x:Name="btnShowMore" Text="Daha Fazla Göster" Margin="15,5,15,5" HorizontalOptions="FillAndExpand"
+                                BorderWidth="1" BorderColor="#2dbefc" BackgroundColor="Transparent" TextColor="#2dbefc"
+                                FontAttributes="Bold"></Button>
+                </StackLayout>
+
+
+
+
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+    <local:NotificationsPage></local:NotificationsPage>
+    
+    
+</TabbedPage>

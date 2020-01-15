@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.MatchesTabbedPages.SearchPlayerPage"
+             BackgroundImageSource="soccer_green_bg.jpg"
+             Title="OYUNCU ARA">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,20,12">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Grid.Row="1">
+                            <Label x:Name="lblHeader" Text="Takıma adam mı eksik?"  TextColor="White"
+                       HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" Margin="0,0,0,14"></Label>
+                            <Label x:Name="lblSubHeader" Text="Harbi Saha ile eksiği tamamla.Futbol oynayarak yeni köprüler kur.Futbol tutkun hiç sönmesin." 
+                           HorizontalOptions="CenterAndExpand"  
+                        TextColor="White" FontAttributes="Bold"  FontSize="Medium" ></Label>
+                        </StackLayout>
+                    </Grid>
+
+
+                </StackLayout>
+
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="0,0,0,18">
+                    <Button x:Name="btnFindPlayer" BackgroundColor="#2dbefc" TextColor="White" HorizontalOptions="FillAndExpand"
+                        Text="HEMEN İLAN VER" Margin="20,5,20,0" Clicked="BtnFindPlayer_Clicked" CornerRadius="15"></Button>
+                    <Button x:Name="btnMyAdverts" BackgroundColor="White" TextColor="#2dbefc" HorizontalOptions="FillAndExpand"
+                        Text="İLANLARIMA GÖZAT" Margin="20,5,20,0" CornerRadius="15" Clicked="BtnMyAdverts_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

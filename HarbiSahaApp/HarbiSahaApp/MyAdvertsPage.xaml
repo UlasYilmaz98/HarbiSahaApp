@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.MyAdvertsPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+           >
+    <ContentPage Title="Güncel">
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Grid">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+                <StackLayout x:Name="layoutOwnedAdverts" Margin="18,8,18,5">
+
+
+
+                    <Frame BackgroundColor="#2dbefc" CornerRadius="0" IsClippedToBounds="False" Padding="0" Margin="8,0,8,5" >
+
+                        <Label Margin="18,10,18,10" Text="Verdiğin İlanlar" FontAttributes="Bold" FontSize="Small" TextColor="White"></Label>
+
+                    </Frame>
+                    <StackLayout IsVisible="False"  x:Name="ActivityLayout" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="7">
+                        <Label Text="İlanlar yükleniyor..." TextColor="#2dbefc"></Label>
+                        <AbsoluteLayout HorizontalOptions="Center">
+                            <ActivityIndicator x:Name="activity"  
+                       IsRunning="True"  
+                       IsEnabled="True"  
+                       IsVisible="True"  
+                       Color="DeepSkyBlue"  
+                       BackgroundColor="Transparent"/>
+                        </AbsoluteLayout>
+
+                    </StackLayout>
+                    <Label  x:Name="noOpenAdvert" Text="Güncel durumda bir ilanın bulunmuyor!" IsVisible="False" FontAttributes="Italic" HorizontalOptions="CenterAndExpand"></Label>
+
+                    <CollectionView x:Name="collectionView0" SelectionMode="Single" HorizontalOptions="CenterAndExpand"  
+                                 Margin="8,5,2,0"    >
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout  Orientation="Vertical" Span="1"  VerticalItemSpacing="5" ></GridItemsLayout>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0" Margin="0" Padding="0">
+                                    <Frame  VerticalOptions="FillAndExpand" Margin="0,0,0,0" Padding="0" BackgroundColor="White"
+                           CornerRadius="0"  IsClippedToBounds="False" BorderColor="#d9d9d9" HasShadow="False" HeightRequest="150" HorizontalOptions="FillAndExpand"
+                               >
+                                        <StackLayout x:Name="inner1" Margin="6,4,4,4" Opacity="{Binding Opacity}">
+                                            <Grid RowSpacing="7">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                   
+
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                               
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Margin="4,4,0,4" Grid.Row="0" Grid.Column="0" x:Name="lblType1" 
+                                                        Text="{Binding Type}" TextColor="#333333" ></Label>
+                                                
+                                                <Label VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Margin="4,0,0,0"
+                                                       Text="{Binding DateAndTime}" FontSize="Medium" x:Name="lblDateAndTime1" TextColor="#00396b" ></Label>
+
+                                                <Label VerticalOptions="Center" Grid.Row="2" Grid.Column="0" x:Name="lblLocation1"  Margin="4,0,0,0"
+                                                       TextColor="#004b8c" Text="{Binding Location}"   ></Label>
+                 
+                                            </Grid>
+                                            <BoxView HeightRequest="1" Opacity="1" Color="#e3e3e3" HorizontalOptions="FillAndExpand"></BoxView>
+                                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                                <Label VerticalOptions="Center" x:Name="lblSituation1" TextColor="#004b8c" FontSize="Medium"
+                                                       Text="{Binding Situation}" Margin="4,0,0,0"  ></Label>
+                                                <ImageButton Source="settingsIcon.png" HorizontalOptions="EndAndExpand" Aspect="AspectFit" Margin="0,4,6,0"
+                                                             BackgroundColor="White" VerticalOptions="CenterAndExpand" HeightRequest="24"
+                                                             Clicked="ImageButton_Clicked" ></ImageButton>
+                                            </StackLayout>
+
+
+                                        </StackLayout>
+
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer x:Name="frameAdvTapped" Tapped="FrameAdvTapped_Tapped"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>
+
+
+                                    </Frame>
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+
+                    <Frame BackgroundColor="#2dbefc" CornerRadius="0" IsClippedToBounds="False" Padding="18,10,18,10" Margin="0,0,8,5" >
+
+                        <Label Margin="0" Text="Maça katılma isteklerin" FontAttributes="Bold" FontSize="Small" TextColor="White"></Label>
+
+                    </Frame>
+                    <StackLayout IsVisible="False"  x:Name="ActivityLayout1" HorizontalOptions="CenterAndExpand"  Spacing="10" Padding="7">
+                        <Label Text="İlanlar yükleniyor..." TextColor="#2dbefc"></Label>
+                        <AbsoluteLayout HorizontalOptions="Center">
+                            <ActivityIndicator x:Name="activity1"  
+                       IsRunning="True"  
+                       IsEnabled="True"  
+                       IsVisible="True"  
+                       Color="#2dbefc"  
+                       BackgroundColor="Transparent"/>
+                        </AbsoluteLayout>
+                    </StackLayout>
+                    <Label  x:Name="noOpenRequest" Text="Güncel durumda bir maça katılma isteğiniz bulunmuyor!" IsVisible="False" FontAttributes="Italic" HorizontalOptions="CenterAndExpand"></Label>
+                    <CollectionView  x:Name="collectionView1" SelectionMode="Single" HorizontalOptions="CenterAndExpand"  
+                                 Margin="8,3,8,0" SelectionChanged="CollectionView1_SelectionChanged" VerticalOptions="FillAndExpand"  >
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout  Orientation="Vertical" Span="1"  VerticalItemSpacing="5" ></GridItemsLayout>
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                                <Frame  VerticalOptions="FillAndExpand" Margin="0,0,0,0" Padding="0" BackgroundColor="White"
+                           CornerRadius="0"  IsClippedToBounds="False" BorderColor="#d9d9d9" HasShadow="False" HeightRequest="165" HorizontalOptions="FillAndExpand"
+                               >
+                                    <StackLayout x:Name="inner1" Margin="6,4,4,4" Opacity="{Binding Opacity}">
+                                        <Grid RowSpacing="7">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Margin="4,4,0,4" Grid.Row="0" Grid.Column="0" x:Name="lblType1" 
+                                                        Text="{Binding Type}" TextColor="#333333" ></Label>
+
+                                            <Label VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Margin="4,0,0,0"
+                                                       Text="{Binding DateAndTime}" FontSize="Medium" x:Name="lblDateAndTime1" TextColor="#00396b" ></Label>
+
+                                            <Label VerticalOptions="Center" Grid.Row="2" Grid.Column="0" x:Name="lblLocation1"  Margin="4,0,0,0"
+                                                       TextColor="#004b8c" Text="{Binding Location}"   ></Label>
+
+                                        </Grid>
+                                        <BoxView HeightRequest="1" Opacity="1" Color="#e3e3e3" HorizontalOptions="FillAndExpand"></BoxView>
+                                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <image:CircleImage Source="{Binding ProfilePicture}" HeightRequest="28" WidthRequest="28" Aspect="AspectFill"></image:CircleImage>
+                                            <Label Text="{Binding OwnerName}" TextColor="#333333" Margin="3,0,0,0"></Label>
+                                            <Label VerticalOptions="Center" x:Name="lblSituation1" TextColor="{Binding TextColorSituation}" FontSize="Small"
+                                                       Text="{Binding RequestSituation}" Margin="4,0,8,0" HorizontalOptions="CenterAndExpand" ></Label>
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="frameReqTapped" Tapped="FrameReqTapped_Tapped"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+
+
+                                </Frame>
+
+
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+
+
+
+
+                </StackLayout>
+
+
+
+                <StackLayout x:Name="layoutRequestOwneds" Margin="18,8,18,5">
+                    
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+
+        </ScrollView>
+    </ContentPage>
+    
+    
+    
+    
+    
+    <ContentPage Title="Geçmiş"></ContentPage>
+    
+</TabbedPage>

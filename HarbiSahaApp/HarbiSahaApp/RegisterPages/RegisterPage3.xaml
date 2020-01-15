@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.RegisterPages.RegisterPage3"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             Title="Kayıt Ol 3/4 "
+             xmlns:behavior="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            
+            <Label Margin="12,12,20,6" Text="Harbi Saha'ya katılın" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+            <Label Margin="12,12,20,6" Text="Telefon numaranızı doğrulayın."  FontAttributes="Bold"></Label>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,40,12,20">
+                <Label Text="Telefon Numaranız" FontSize="Small" Margin="0"></Label>
+                <Frame Grid.Row="0" Grid.Column="0" x:Name="framePhoneNumber" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#2dbefc" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        
+                        <Controls:XEntry x:Name="entryPhoneNumber"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,6,0,6" Keyboard="Numeric">
+                            <Controls:XEntry.Behaviors>
+                                <behavior:MaskedBehavior Mask="+90(XXX) XXX XX XX"></behavior:MaskedBehavior>
+                            </Controls:XEntry.Behaviors>
+
+                        </Controls:XEntry>
+                    </StackLayout>
+                    
+
+
+                </Frame>
+                <Label Margin="0,5,6,5" x:Name="entryWhy" TextColor="#2dbefc" Text="Telefon Numarası neden gerekli?" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tapWhy" Tapped="TapWhy_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <!--<Label Margin="0,5,6,2" x:Name="lblWhy" FontAttributes="Bold" Text=""></Label>
+                <Label Text="Harbi Saha" FontAttributes="Italic"></Label>-->
+ 
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+
+                
+                <Button x:Name="btnConfirmPhone" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="DOĞRULAMA KODU GÖNDER" Clicked="BtnConfirmPhone_Clicked"></Button>
+
+                
+            </StackLayout>
+
+
+
+
+
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

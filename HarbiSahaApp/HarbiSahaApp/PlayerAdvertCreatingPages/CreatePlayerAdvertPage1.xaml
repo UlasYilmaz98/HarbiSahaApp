@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.PlayerAdvertCreatingPages.CreatePlayerAdvertPage1"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#f2f2f2" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout x:Name="layoutStep1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="layoutHeaders" HorizontalOptions="FillAndExpand" Margin="8,5,8,5">
+
+                    <Label Text="Maç için lokasyon bilgilerini belirleyin.Maç nerede oynanacak?" FontSize="Medium" FontAttributes="Bold" TextColor="Black">
+
+                    </Label>
+
+                </StackLayout>
+
+                <StackLayout x:Name="layoutCity" HorizontalOptions="FillAndExpand" Margin="12,8,8,0" >
+
+                    <StackLayout  Margin="0,3,0,0">
+                        <Frame x:Name="frameEntryCity" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locationIcon.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryCity"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Şehir adı girin" PlaceholderColor="Gray" Margin="0,10,0,10"
+                                              TextChanged="EntryCity_TextChanged">
+                                </Controls:XEntry>
+
+                            </Grid>
+
+
+
+
+                        </Frame>
+                        <CollectionView x:Name="lstCities" SelectionMode="Single" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                                    Margin="0" SelectionChanged="LstCities_SelectionChanged" HeightRequest="100">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="1" HorizontalItemSpacing="3" VerticalItemSpacing="5"></GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0" x:Name="gridCities">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Row="0"  Grid.Column="0" Source="locationIcon.png" WidthRequest="8"  Aspect="AspectFit"></Image>
+                                        <Label Grid.Row="0"  Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold"
+                                                   VerticalOptions="Center"></Label>
+
+
+                                    </Grid>
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                        <CollectionView x:Name="lstTowns" SelectionMode="Single" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                                    Margin="0" SelectionChanged="LstTowns_SelectionChanged" HeightRequest="100" Rotation="180" IsVisible="False" >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="1" HorizontalItemSpacing="5" VerticalItemSpacing="5"></GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Rotation="180">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Row="0"  Grid.Column="0" Source="locationIcon.png" WidthRequest="8"  Aspect="AspectFit"></Image>
+
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}"></Label>
+                                    </Grid>
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                <StackLayout x:Name="layoutTown" HorizontalOptions="FillAndExpand" Margin="12,0,8,0" >
+
+                    <StackLayout  Margin="0,3,0,0">
+                        <Frame x:Name="farmeEntryTown" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locationIcon.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryTown"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="İlçe adı girin" PlaceholderColor="Gray" Margin="0,10,0,10"
+                                              TextChanged="EntryTown_TextChanged">
+                                </Controls:XEntry>
+
+                            </Grid>
+                        </Frame>
+
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" Margin="12,20,12,5" VerticalOptions="End" 
+                    HorizontalOptions="FillAndExpand" Text="DEVAM ET" Clicked="BtnNext_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

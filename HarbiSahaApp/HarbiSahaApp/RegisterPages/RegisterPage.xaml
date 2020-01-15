@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.RegisterPages.RegisterPage"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             Title="KAYIT OL">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout x:Name="LayoutStep1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Margin="12,12,20,6" Text="Harbi Saha'ya katılın" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                <Label Margin="12,6,20,6" Text="Bugün Harbi Saha'ya kaydolarak sahalara adımınızı atın!"></Label>
+
+                <StackLayout Margin="12,20,8,1">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="15*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="emailIcon.png" Aspect="AspectFit"></Image>
+
+                        <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryEmail"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="E-posta Adresi" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                          Completed="EntryEmail_Completed" TextChanged="EntryEmail_TextChanged" Unfocused="EntryEmail_Unfocused"   >
+                        </Controls:XEntry>
+
+                    </Grid>
+                    <BoxView x:Name="boxViewMail" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                    <!--<Label x:Name="lblWarningMail" FontAttributes="Bold" Text="Lütfen e-postanızın doğru girilip girilmediğini kontrol edin" IsVisible="False" TextColor="Red"></Label>-->
+                </StackLayout>
+                <StackLayout Margin="12,0,8,5">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="15*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locked.png" Aspect="AspectFit"></Image>
+
+                        <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryPassword"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Şifre" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                     IsPassword="True" Completed="EntryPassword_Completed"   TextChanged="EntryPassword_TextChanged" 
+                                            >
+                        </Controls:XEntry>
+
+                    </Grid>
+
+                    <BoxView x:Name="boxViewPassword" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                    <!--<Label x:Name="lblWarningPass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>-->
+
+                </StackLayout>
+
+                <StackLayout Margin="12,0,8,5">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="15*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="locked.png" Aspect="AspectFit"></Image>
+
+                        <Controls:XEntry Grid.Row="0" Grid.Column="1" x:Name="entryRePassword"  TextColor="#424242"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Şifre Tekrar" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                     IsPassword="True"   TextChanged="EntryRePassword_TextChanged"      >
+                        </Controls:XEntry>
+
+                    </Grid>
+                    <BoxView x:Name="boxViewRePassword" Color="Gray" Opacity="0.3" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,5"></BoxView>
+                    <!--<Label x:Name="lblWarningRePass" FontAttributes="Bold"  IsVisible="False" TextColor="Red"></Label>-->
+                    <StackLayout x:Name="layoutWarnings" Margin="0,5,0,0" IsVisible="False">
+                        <Label x:Name="lblWarningMail"  Text="Lütfen e-postanızın doğru girilip girilmediğini kontrol edin" IsVisible="False" TextColor="Red"></Label>
+                        <Label x:Name="lblWarningPass"   IsVisible="False" TextColor="Red"></Label>
+                        <Label x:Name="lblWarningRePass"   IsVisible="False" TextColor="Red"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                    <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="Devam Et" Clicked="BtnNext_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

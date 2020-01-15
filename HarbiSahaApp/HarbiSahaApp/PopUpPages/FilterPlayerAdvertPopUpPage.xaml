@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.PopUpPages.FilterPlayerAdvertPopUpPage"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+            
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" 
+             CloseWhenBackgroundIsClicked="True" IsAnimating="True"
+                 >
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            >
+
+
+        </animations:ScaleAnimation>
+
+
+    </pages:PopupPage.Animation>
+
+    <Frame BackgroundColor="White" HeightRequest="400" WidthRequest="300" BorderColor="#2dbefc" CornerRadius="5"
+           Padding="0" Margin="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+        <StackLayout Margin="5,8,5,8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <!--<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                
+            </Grid>-->
+
+
+            <Label Text="Şimdi aramanı özelleştirerek kendine uygun maçı bul." FontSize="Medium" TextColor="Black"
+                   FontAttributes="Bold"></Label>
+            <Label Text="Aradığın maçın tarihini ve istediğin saat aralığını gir"></Label>
+            <StackLayout Orientation="Horizontal"></StackLayout>
+            <DatePicker x:Name="datePickerDate" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"></DatePicker>
+            <TimePicker x:Name="timePickerMin"></TimePicker>
+            <TimePicker x:Name="timePickerMax"></TimePicker>
+            
+            
+        </StackLayout>
+        
+        
+        
+    </Frame>
+</pages:PopupPage>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.EditUserInfosPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Kişisel Bilgilerimi Güncelle"
+             
+             xmlns:behavior="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout x:Name="layoutImage" HorizontalOptions="CenterAndExpand" Margin="0,4,0,0">
+
+                    <image:CircleImage HorizontalOptions="Center" BorderColor="Gray" BorderThickness="0.2" Aspect="AspectFill"
+                                           x:Name="imgProfilePicture" HeightRequest="180" WidthRequest="180" Margin="0,0,0,5" Source="examplePerson2.jpg">
+                        <image:CircleImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tapImageChange" Tapped="TapImageChange_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+
+                        </image:CircleImage.GestureRecognizers>
+                    </image:CircleImage>
+                    <Button x:Name="btnChangeProfilePicture" TextColor="#2dbefc" BackgroundColor="White" FontAttributes="Bold" BorderColor="#2dbefc"
+                            Margin="12,5,12,5" HorizontalOptions="CenterAndExpand" Text="Profil Fotoğrafımı Değiştir" BorderWidth="1" Clicked="BtnChangeProfilePicture_Clicked">
+                    </Button>
+
+
+
+                </StackLayout>
+                <StackLayout Margin="12,8,12,8">
+
+                    <Label Text="Ad" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Entry x:Name="entryName" FontSize="Medium" HorizontalOptions="FillAndExpand" Margin="0,0,12,6" ></Entry>
+
+                    <Label Text="Soyad" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Entry x:Name="entrySurname" FontSize="Medium" HorizontalOptions="FillAndExpand" Margin="0,0,12,6" ></Entry>
+
+                    <Label Text="Şehir" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Picker x:Name="pickerCity" Margin="0,0,12,6"></Picker>
+
+
+                    <Label Text="Doğum Tarihi" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Grid HorizontalOptions="FillAndExpand" Margin="0,0,12,6" ColumnSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" ></RowDefinition>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Picker Grid.Row="0" Grid.Column="0" x:Name="pickerBirthDay" HorizontalOptions="FillAndExpand" FontSize="Medium" SelectedIndexChanged="PickerBirthDay_SelectedIndexChanged" ></Picker>
+                        <Picker Grid.Row="0" Grid.Column="1" x:Name="pickerBirthMonth" HorizontalOptions="FillAndExpand" FontSize="Medium" SelectedIndexChanged="PickerBirthMonth_SelectedIndexChanged" ></Picker>
+                        <Picker Grid.Row="0" Grid.Column="2" x:Name="pickerBirthYear" HorizontalOptions="FillAndExpand" FontSize="Medium" SelectedIndexChanged="PickerBirthYear_SelectedIndexChanged" ></Picker>
+                    </Grid>
+
+
+                    <Label Text="Boy (santimetre)" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Picker x:Name="pickerHeight" Margin="0,0,12,6">
+                        <!--<Entry.Behaviors>
+                            <behavior:MaskedBehavior Mask="X.XX"></behavior:MaskedBehavior>
+                        </Entry.Behaviors>-->
+                    </Picker>
+
+                    <Label Text="Favori Mevki" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <Picker x:Name="pickerPosition" Margin="0,0,12,10"></Picker>
+                    
+                    
+
+                    
+
+
+                    
+                    <Label Text="Profil Mesajı" FontSize="Small" TextColor="Gray" Opacity="0.8" FontAttributes="Bold" Margin="0"></Label>
+                    <StackLayout HeightRequest="80"  HorizontalOptions="FillAndExpand">
+                        <Editor x:Name="editorInfo" Margin="0,0,12,10" VerticalOptions="FillAndExpand" ></Editor>
+                    </StackLayout>
+                    
+
+                    <Button x:Name="btnFinish" Text="Değişikleri Kaydet" TextColor="White" FontAttributes="Bold"
+                            BackgroundColor="#2dbefc" HorizontalOptions="FillAndExpand" Clicked="BtnFinish_Clicked" ></Button>
+
+
+
+
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

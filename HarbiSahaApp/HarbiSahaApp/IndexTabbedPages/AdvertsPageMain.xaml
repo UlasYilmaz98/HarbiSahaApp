@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.IndexTabbedPages.AdvertsPageMain"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             IconImageSource="footballBall.png"
+             Title="Maçlar">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout x:Name="layoutTop" Margin="12,12,12,0" BackgroundColor="White">
+                    
+
+                    
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="#e6e8e8"
+                           CornerRadius="10"  IsClippedToBounds="True" BorderColor="#e6e8e8" HasShadow="False" Margin="0" Padding="0">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Grid.Row="0"  Source="SearchMatch1.jpg"  Aspect="AspectFill"></Image>
+                                <Label Grid.Row="1"  Text="İlanlara göz at, uygun takımını bul ve maça başla!" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                            </StackLayout>
+
+                            
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"  BackgroundColor="#e6e8e8" Margin="0" Padding="0"
+                           CornerRadius="10"  IsClippedToBounds="True" BorderColor="#e6e8e8" HasShadow="False">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Grid.Row="0"  Source="SearchPlayer.jpg"  Aspect="AspectFill"></Image>
+                                <Label Grid.Row="1"  Text="Takımın için yıldız oyuncunu bulmaya ne dersin?" Margin="4,5,4,4" HorizontalOptions="Center"
+                                   FontSize="Small" FontAttributes="Bold" TextColor="#636262"></Label>
+                            </StackLayout>
+
+                            
+                        </Frame>
+                    </Grid>
+
+
+
+                </StackLayout>
+                <StackLayout x:Name="layoutMiddle" VerticalOptions="FillAndExpand"  Margin="12,0,12,8" BackgroundColor="White">
+                    <Label x:Name="lblMainText" Text="Bu maçlara dahil olabilirsin" Margin="0,0,16,8" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                    <Label x:Name="lblSubText" Text="Bu oyuncuların maçlarında boş yerler var."
+                     TextColor="#636262" FontSize="Small"></Label>
+
+                    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <CollectionView x:Name="colSearchPlayers" SelectionMode="Single" Margin="0,5,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                        SelectionChanged="ColSearchPlayers_SelectionChanged">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout  Orientation="Vertical" Span="1" VerticalItemSpacing="5" ></GridItemsLayout>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Grid>
+                                        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsClippedToBounds="True"
+                                       CornerRadius="28" Margin="0" Padding="0" BorderColor="DarkGray">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
+
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <image:CircleImage HorizontalOptions="StartAndExpand" BorderColor="SlateGray" BorderThickness="0.5" x:Name="imgProfilePicture"
+                                                       Aspect="AspectFill" Source="{Binding ProfilePicturePath}" HeightRequest="60" Margin="0"
+                                                       Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"></image:CircleImage>
+                                                <Label x:Name="lblName" Grid.Row="0" Grid.Column="1" 
+                                                 VerticalOptions="Center" Grid.ColumnSpan="2">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding NameText}" FontAttributes="Bold"></Span>
+                                                            <Span Text="{Binding PositionText}"></Span>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+
+                                                <Label x:Name="lblCityAndTown" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,0,5"
+                                                       Text="{Binding CityAndTown }" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                                                <Label x:Name="lblDate" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"
+                                                       VerticalOptions="Center" Text="{Binding Date}" FontAttributes="Italic"></Label>
+                                                <Label x:Name="lblTime" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center"
+                                                       VerticalOptions="Center" Text="{Binding Time}" FontAttributes="Bold"></Label>
+
+                                            </Grid>
+                                        </Frame>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </AbsoluteLayout>
+                    <Button  x:Name="btnShowAllFieldPlayerAdverts" HorizontalOptions="FillAndExpand" Text="TÜMÜNÜ GÖSTER"
+                            FontAttributes="Bold" BackgroundColor="Transparent" BorderColor="#788dab"
+                            TextColor="#788dab" BorderWidth="1" CornerRadius="26" ></Button>
+
+
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,8"></StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

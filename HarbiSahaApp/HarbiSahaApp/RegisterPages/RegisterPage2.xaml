@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.RegisterPages.RegisterPage2"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             Title="Kayıt Ol 2/4 ">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,20,20,5">
+                <Label Margin="0,0,20,6" Text="Profilinizi Oluşturun" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+
+                <Label Text="İsim" FontAttributes="Bold" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Entry x:Name="entryName" FontSize="Medium" TextColor="Black" HorizontalOptions="FillAndExpand"  Margin="0,0,0,8"
+                                          Completed="EntryName_Completed" Unfocused="EntryName_Unfocused"></Entry>
+
+                <Label Text="Soyisim" FontAttributes="Bold" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Entry x:Name="entrySurName"  TextColor="Black"  HorizontalOptions="FillAndExpand" Completed="EntrySurName_Completed" 
+                       Unfocused="EntrySurName_Unfocused" FontSize="Medium" Margin="0,0,0,12" ></Entry>
+
+                <Label Text="Yaşadığınız şehir neresi ?" FontAttributes="Bold" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Picker  Margin="0,0,0,12"  Grid.Row="0" Grid.Column="0" x:Name="pickerCity"  TextColor="Black" FontSize="Medium"
+                                 HorizontalOptions="FillAndExpand"  Title="Şehir Seçin" >
+                </Picker>
+
+                <Label Text="Doğum tarihinizi girin " FontAttributes="Bold" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Label Text="Doğum tarihiniz kimse ile paylaşılmaz " FontAttributes="Italic" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Grid Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Picker Grid.Row="0" Grid.Column="0" x:Name="pickerDay"  FontSize="Medium" TextColor="Black"
+                                 HorizontalOptions="FillAndExpand"  >
+                    </Picker>
+
+                    <Picker Grid.Row="0" Grid.Column="1" x:Name="pickerMonth" FontSize="Medium" TextColor="Black"
+                                 HorizontalOptions="FillAndExpand"  >
+                    </Picker>
+
+                    <Picker Grid.Row="0" Grid.Column="2" x:Name="pickerYear" FontSize="Medium"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand"  >
+                    </Picker>
+
+                </Grid>
+
+                <Label Text="Halı sahada favori mevkiniz hangisi? " FontAttributes="Bold" FontSize="Small" Margin="0,0,0,0"></Label>
+                <Grid Margin="0,0,0,6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Image Grid.Row="0" Grid.Column="0" WidthRequest="24" Source="footballShirt.png" Aspect="AspectFit" HorizontalOptions="Center"></Image>
+                    <Picker Grid.Row="0" Grid.Column="1" x:Name="pickerPosition" FontSize="Medium"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" Title="Mevki Seçin"  >
+                    </Picker>
+
+                    
+                </Grid>
+
+
+
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Margin="20,0,20,2" >
+
+                <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                             Text="Devam Et" Clicked="BtnNext_Clicked"></Button>
+
+            </StackLayout> 
+
+            <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,20,12,20">
+                <Label Margin="0,0,20,6" Text="Profilinizi Oluşturun" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+                
+                <StackLayout Margin="0,0,4,0" HorizontalOptions="FillAndExpand">
+                    <Frame x:Name="frameEntryName" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <Controls:XEntry Grid.Row="0" Grid.Column="0" x:Name="entryName"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="İsim" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                          Completed="EntryName_Completed" Unfocused="EntryName_Unfocused"  >
+                            </Controls:XEntry>
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="4,0,0,0" HorizontalOptions="FillAndExpand">
+                    <Frame x:Name="frameEntrySurName" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Controls:XEntry Grid.Row="0" Grid.Column="0" x:Name="entrySurName"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Placeholder="Soyisim" PlaceholderColor="Gray" Margin="10,6,0,6"
+                                         Completed="EntrySurName_Completed" Unfocused="EntrySurName_Unfocused"   >
+                            </Controls:XEntry>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,5,12,20">
+                <Label Text="Yaşadığınız şehir neresi ?" TextColor="#33363d" Margin="0,10,0,0"
+                       FontAttributes="Bold"></Label>
+                <Frame x:Name="frameCity" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                 
+
+                        <Controls:XPicker  Margin="10,6,0,6"  Grid.Row="0" Grid.Column="0" x:Name="pickerCity"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Title="Şehir Seçin" >
+                        </Controls:XPicker>
+
+                    </Grid>
+
+
+
+
+                </Frame>
+
+
+
+            </StackLayout>
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,5,12,20">
+
+                <Label Text="Doğum tarihinizi girin." TextColor="#33363d"  FontAttributes="Bold"></Label>
+                <Label Text="Doğum tarihiniz kimse ile paylaşılmaz." FontAttributes="Italic" FontSize="Small"></Label>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0" x:Name="frameBirthDay" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                        <Controls:XPicker x:Name="pickerDay"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,6,0,6"
+                                              >
+                        </Controls:XPicker>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" x:Name="frameBirthMonth" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                        <Controls:XPicker x:Name="pickerMonth"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,6,0,6"
+                                           SelectedIndexChanged="PickerMonth_SelectedIndexChanged"   >
+                        </Controls:XPicker>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="2" x:Name="frameBirthYear" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand">
+                        <Controls:XPicker x:Name="pickerYear"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,6,0,6"
+                                             >
+                        </Controls:XPicker>
+                    </Frame>
+
+
+                </Grid>
+                
+                <StackLayout Margin="0,20,0,0" >
+                    <Label Text="Halı sahada favori mevkiniz hangisi?" TextColor="#33363d" Margin="0,10,0,0"
+                       FontAttributes="Bold"></Label>
+                    <Frame x:Name="framePosition" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#f2f2f2" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="footballShirt.png" Aspect="AspectFit"></Image>
+
+                            <Controls:XPicker  Margin="10,6,0,6"  Grid.Row="0" Grid.Column="1" x:Name="pickerPosition"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Title="Mevki Seçin" >
+                            </Controls:XPicker>
+
+                        </Grid>
+
+
+
+
+                    </Frame>
+                </StackLayout>
+
+
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" >
+
+                <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="Devam Et" Clicked="BtnNext_Clicked"></Button>
+
+            </StackLayout>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

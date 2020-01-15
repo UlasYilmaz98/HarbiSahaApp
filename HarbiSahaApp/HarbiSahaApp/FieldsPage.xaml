@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.FieldsPage"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout x:Name="layoutTop" HorizontalOptions="FillAndExpand" Margin="8,8,8,8">
+
+                    <Label Text="Sahaları Filtreleyin" Margin="0,2,0,5" HorizontalOptions="CenterAndExpand"></Label>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+
+                        <Frame x:Name="frameFilterCity" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="#2dbefc" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Controls:XPicker x:Name="pickerCities"  TextColor="#2dbefc" FontAttributes="Bold"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Title="Şehir Seçin" TitleColor="#2dbefc" Margin="8,8,0,8"
+                                              SelectedIndexChanged="PickerCities_SelectedIndexChanged">
+
+                            </Controls:XPicker>
+
+                        </Frame>
+                        <Frame x:Name="frameFilterCityTown" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="#2dbefc" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Controls:XPicker x:Name="pickerTowns"  TextColor="#2dbefc" FontAttributes="Bold"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Title="Şehir Seçin" TitleColor="#2dbefc" Margin="8,8,0,8"
+                                              SelectedIndexChanged="PickerCities_SelectedIndexChanged">
+
+                            </Controls:XPicker>
+
+                        </Frame>
+
+
+                    </StackLayout>
+                    <Button x:Name="btnFilter" HorizontalOptions="FillAndExpand" Text="FİLTRELE" TextColor="White"
+                            BackgroundColor="#2dbefc" BorderWidth="1" BorderColor="#2dbefc" FontAttributes="Bold"></Button>
+
+
+                </StackLayout>
+                
+                
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

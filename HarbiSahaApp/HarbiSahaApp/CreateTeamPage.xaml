@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       
+             xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             x:Class="HarbiSahaApp.CreateTeamPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="layoutStep1">
+                <StackLayout x:Name="layoutTop" Margin="12,8,12,8">
+
+                    <Label x:Name="lblMainText" Text="Takım Oluştur." Margin="0,0,16,8" TextColor="#33363d" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <Label x:Name="lblSubText" Text="Harbi Saha'da rakip aramak için öncelikle bir takımın olması gerekir.Şimdi takım kur,takımının kaptanı ol ve rakip aramaya başla!"
+                     TextColor="#636262" FontSize="Small"></Label>
+                    <StackLayout Margin="0,8,0,0">
+
+                        <Label Text="Takım adını gir (En fazla 13 karakter olmalıdır)" FontSize="Small" FontAttributes="Bold" ></Label>
+                        <StackLayout Margin="0,2,0,8">
+                            <Frame x:Name="frmTeamName" Margin="0" Padding="0" CornerRadius="8" BackgroundColor="White"
+                           BorderColor="Black" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Controls:XEntry x:Name="entryTeamName"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontAttributes="Bold"  Margin="10,10,0,10"
+                                    TextChanged="EntryTeamName_TextChanged"   >
+
+                                </Controls:XEntry>
+                                
+
+                            </Frame>
+                            <Label x:Name="situationControlTeamName" FontSize="Micro" TextColor="Red"
+                                   Text="Takım adı en az 4 karakter uzuluğunda olmalıdır." FontAttributes="Bold" ></Label>
+
+
+                        </StackLayout>
+                        <Label Text="Takım kısaltmasını gir"  FontSize="Small" FontAttributes="Bold"></Label>
+                        <StackLayout Margin="0,2,0,8">
+                            <Frame x:Name="frmTeamShortName" Margin="0" Padding="0" CornerRadius="8" BackgroundColor="White"
+                           BorderColor="Black" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Controls:XEntry x:Name="entryTeamShortName"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontAttributes="Bold"  
+                                                 Margin="10,10,0,10" TextChanged="EntryTeamShortName_TextChanged">
+            
+                                </Controls:XEntry>
+
+                            </Frame>
+                            <Label x:Name="situationControlShortName" FontSize="Micro" TextColor="Red"
+                                   Text="Takım kısaltması en az 2 karakter uzuluğunda olmalıdır." ></Label>
+
+
+                        </StackLayout>
+                        <!--<StackLayout Margin="0,5,0,5">
+
+                            <Label Text="Arkadaşlarını davet etmek ister misin?" Margin="0,0,16,8" TextColor="#33363d" FontSize="Medium" FontAttributes="Bold"></Label>
+                            <Label  Text="Arkadaşlarını takımına davet ederek takımını büyütebilirsin.Şimdi ilk davetin ile başla! Eğer arkadaşın henüz Harbi Saha kullanmıyorsa ona bir davet maili gidecek."
+                                TextColor="#636262" FontSize="Small"></Label>
+                            
+
+                        </StackLayout>
+                        <StackLayout Margin="0,2,0,8">
+                            <Frame  Margin="0" Padding="0" CornerRadius="8" BackgroundColor="White"
+                           BorderColor="Black" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Controls:XEntry x:Name="entryFriendMail"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontAttributes="Bold"  
+                                               Margin="10,10,0,10" TextChanged="EntryTeamName_TextChanged">
+
+                                </Controls:XEntry>
+
+                            </Frame>
+                            
+
+
+                        </StackLayout>-->
+
+
+                    </StackLayout>
+                    <Button VerticalOptions="EndAndExpand" Text="TAMAMLA" x:Name="btnFinish" BackgroundColor="#2dbefc"
+                            TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Clicked="BtnFinish_Clicked"></Button>
+
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

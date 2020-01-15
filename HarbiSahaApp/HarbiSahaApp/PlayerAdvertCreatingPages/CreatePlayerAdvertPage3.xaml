@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.PlayerAdvertCreatingPages.CreatePlayerAdvertPage3"
+              xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout x:Name="layoutStep3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="layoutHeadersStep3" HorizontalOptions="FillAndExpand" Margin="12,5,12,5">
+
+                    <Label Text="Maç ne zaman oynanacak?" FontSize="Medium" FontAttributes="Bold" TextColor="Black">
+
+                    </Label>
+                    <Label Text="Maçın oynanacağı günü ve saati belirtin."  FontAttributes="Bold" >
+
+                    </Label>
+
+                </StackLayout>
+
+                <StackLayout x:Name="layoutDate" Margin="12,8,8,0" HorizontalOptions="FillAndExpand">
+                    <StackLayout Margin="0,3,0,0">
+
+                        <Frame x:Name="frameDate" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="calendarIcon.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XDatePicker Grid.Row="0" Grid.Column="1" x:Name="datePickerDate"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="0,10,0,10"
+                                             >
+                                </Controls:XDatePicker>
+
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                <StackLayout x:Name="layoutTime" Margin="12,16,8,0" HorizontalOptions="FillAndExpand">
+                    <StackLayout Margin="0,3,0,0">
+
+                        <Frame x:Name="frameTime" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="10,0,0,2" Grid.Row="0" Grid.Column="0" WidthRequest="12" Source="clockIcon.png" Aspect="AspectFit"></Image>
+
+                                <Controls:XTimePicker Grid.Row="0" Grid.Column="1" x:Name="timePickerTime"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="0,10,0,10"
+                                             >
+                                </Controls:XTimePicker>
+
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+                <StackLayout x:Name="layoutHeadersStep3_1" HorizontalOptions="FillAndExpand" Margin="12,5,12,5">
+
+                    <Label Text="İlan sayısını ve mevkileri belirle." FontSize="Medium" FontAttributes="Bold" TextColor="Black">
+
+                    </Label>
+                    <Label Text="Son adımda aradığın mevkileri belirle.Maçın için 3 taneye kadar ilan açabilirsin."  FontAttributes="Bold" >
+
+                    </Label>
+
+                </StackLayout>
+
+
+                <!--MEVKİ VE POZİSYON SEÇİMİ-->
+                <StackLayout x:Name="layoutPositions" Margin="12,16,8,0" HorizontalOptions="FillAndExpand">
+                    <StackLayout Margin="0,3,0,0">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <!--<RowDefinition Height="*"></RowDefinition>-->
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="8*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <Frame IsVisible="True" Grid.Row="0" Grid.Column="0" x:Name="framePositionLabel1" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"   >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Image Grid.Row="0" Grid.Column="0" Margin="6,0,0,2" Source="user.png" HeightRequest="10" Aspect="AspectFit"></Image>
+                                    <Label Text="1" Grid.Row="0" Grid.Column="1" Margin="3,0,3,0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                                </Grid>
+                            </Frame>
+
+                            <Frame IsVisible="False" Grid.Row="1" Grid.Column="0" x:Name="framePositionLabel2" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Image Grid.Row="0" Grid.Column="0" Margin="6,0,0,2" Source="user.png" HeightRequest="10" Aspect="AspectFit"></Image>
+                                    <Label Text="2" Grid.Row="0" Grid.Column="1" Margin="6,0,6,0" FontAttributes="Bold" VerticalOptions="Center" ></Label>
+                                </Grid>
+                            </Frame>
+
+                            <Frame IsVisible="False" Grid.Row="2" Grid.Column="0" x:Name="framePositionLabel3" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Image Grid.Row="0" Grid.Column="0" Margin="6,0,0,2" Source="user.png" HeightRequest="10" Aspect="AspectFit"></Image>
+                                    <Label Text="3" Grid.Row="0" Grid.Column="1" Margin="6,0,6,0" FontAttributes="Bold" VerticalOptions="Center" ></Label>
+                                </Grid>
+                            </Frame>
+
+
+                            <Frame IsVisible="True" Grid.Row="0" Grid.Column="1" x:Name="framePositionPicker1" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="15*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Controls:XPicker Grid.Row="0" Grid.Column="1" x:Name="positionPicker1"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="0,10,0,10" Title="Mevki Seçin"
+                                             >
+                                    </Controls:XPicker>
+
+                                </Grid>
+                            </Frame>
+                            <Frame IsVisible="False" Grid.Row="1" Grid.Column="1" x:Name="framePositionPicker2" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="15*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Controls:XPicker Grid.Row="0" Grid.Column="1" x:Name="positionPicker2"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="0,10,0,10" Title="Mevki Seçin"
+                                             >
+                                    </Controls:XPicker>
+
+                                </Grid>
+                            </Frame>
+                            <Frame IsVisible="False" Grid.Row="2" Grid.Column="1" x:Name="framePositionPicker3" Margin="0" Padding="0" CornerRadius="15" BackgroundColor="#e6e6e6"
+                           BorderColor="Transparent" IsClippedToBounds="True" HorizontalOptions="FillAndExpand"  >
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="15*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <Controls:XPicker Grid.Row="0" Grid.Column="1" x:Name="positionPicker3"  TextColor="Gray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="0,10,0,10" Title="Mevki Seçin"
+                                             >
+                                    </Controls:XPicker>
+
+                                </Grid>
+                            </Frame>
+
+
+
+
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame BackgroundColor="LightGreen" Grid.Row="0" Grid.Column="0" x:Name="frameAddPlayerAdvert"
+                                   IsClippedToBounds="True" CornerRadius="30" Margin="0" Padding="0" HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+
+                                <Button IsEnabled="True" x:Name="btnAddPlayerAdvert" BackgroundColor="LightGreen" TextColor="White" 
+                    HorizontalOptions="FillAndExpand" Text="YENİ EKLE" Clicked="BtnAddPlayerAdvert_Clicked"></Button>
+
+
+                            </Frame>
+
+                            <Frame BackgroundColor="LightGreen" Grid.Row="0" Grid.Column="1" x:Name="frameRemovePlayerAdvert"
+                                   IsClippedToBounds="True" CornerRadius="30" Margin="0" Padding="0" HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+
+                                <Button IsEnabled="True" x:Name="btnRemovePlayerAdvert" BackgroundColor="DarkRed" TextColor="White" 
+                    HorizontalOptions="FillAndExpand" Text="ÇIKAR" Clicked="BtnRemovePlayerAdvert_Clicked"></Button>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                <Button x:Name="btnNext" BackgroundColor="#2dbefc" TextColor="White" Margin="12,20,12,5" VerticalOptions="End" 
+                    HorizontalOptions="FillAndExpand" Text="DEVAM ET" Clicked="BtnNext_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

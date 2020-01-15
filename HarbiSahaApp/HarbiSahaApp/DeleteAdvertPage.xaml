@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.DeleteAdvertPage"
+             Title="Maç İptal">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout x:Name="layoutHeader" BackgroundColor="#f0f0f0" HorizontalOptions="FillAndExpand" Margin="0,0,0,0">
+
+                    <Label Margin="8,6,10,12" Text="Bu rezervasyonu iptal etmek istediğinden emin misin?" FontSize="Medium"
+                           TextColor="#090036"></Label>
+                    <Label Margin="8,2,10,8" Text="Lütfen hizmetimizi iyileştirebilmemiz için bize neler olduğunu anlat."
+                            TextColor="#090036"></Label>
+                    <StackLayout HorizontalOptions="FillAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand" Padding="0" BackgroundColor="#2dbefc">
+                        <Label TextColor="White" FontAttributes="Bold" Text="NEDEN" Margin="8,6,10,6"></Label>
+                    </StackLayout>
+
+                </StackLayout>
+                
+                <StackLayout x:Name="layoutDetails" HorizontalOptions="FillAndExpand" Margin="0">
+
+                    <Label TextColor="#090036" FontAttributes="Bold" Text="Lütfen bir neden seç" Margin="8,6,10,12"></Label>
+                    <Picker x:Name="pickerReasons" Margin="12,2,10,8" TextColor="#090036" HeightRequest="80" FontSize="Small"></Picker>
+                    
+                </StackLayout>
+                <BoxView Color="#e0e0e0" Opacity="0.2" HorizontalOptions="FillAndExpand" Margin="0,4,0,4" HeightRequest="1"></BoxView>
+                <StackLayout x:Name="layoutMoreDetails"  HorizontalOptions="FillAndExpand" Margin="0">
+
+                    <Label TextColor="#090036" FontAttributes="Bold" Text="Daha fazla detay" Margin="8,6,10,12"></Label>
+                    <Editor x:Name="entryMoreDetails" HeightRequest="100" Margin="8,2,8,6" TextColor="#090036" PlaceholderColor="Gray" 
+                            Placeholder="Lütden detayları belirt(bu detaylar sadece Üye ilişkileri ekibimiz tarafından görülecek)" FontSize="Medium"></Editor>
+                    
+                </StackLayout>
+                <BoxView Color="#e0e0e0" Opacity="0.2" HorizontalOptions="FillAndExpand" Margin="0,4,0,4" HeightRequest="1"></BoxView>
+                <StackLayout x:Name="layoutEnd" HorizontalOptions="FillAndExpand" Margin="0">
+
+                    <Label Margin="8,6,10,6" Text="Not: Son dakika iptallerinin oranını kaydediyoruz." TextColor="#090036"></Label>
+
+                    <Label TextColor="#090036" Margin="8,4,10,6" Text="Maç ilanına yanıt veren ve kabul eden birisi varsa mesaj alacak.Onunla doğrudan irtibata geçmeyi unutma.Daha samimi olacaktır." ></Label>
+
+                </StackLayout>
+                <Button x:Name="btnOK" CornerRadius="15" BackgroundColor="#2dbefc" Text="ONAYLA" Margin="10,2,10,4"
+                        TextColor="White" FontAttributes="Bold" Clicked="BtnOK_Clicked"></Button>
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

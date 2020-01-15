@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HarbiSahaApp.RegisterPages.RegisterPage4"
+             xmlns:Controls="clr-namespace:HarbiSahaApp.CustomControls"
+             Title="Kayıt Ol 4/4 "
+             xmlns:behavior="clr-namespace:HarbiSahaApp.CustomControls">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Label Margin="12,12,20,6" Text="Harbi Saha'ya katılın" TextColor="#33363d" FontSize="Large" FontAttributes="Bold"></Label>
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="12,40,12,20">
+                <Label Text="Lütfen telefonunuza gelen onay kodunu girin." FontSize="Small" Margin="0"></Label>
+                <Frame Grid.Row="0" Grid.Column="0" x:Name="framePhoneNumber" Margin="0" Padding="0" CornerRadius="10" BackgroundColor="White"
+                           BorderColor="#2dbefc" IsClippedToBounds="False" HorizontalOptions="FillAndExpand"  >
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <Controls:XEntry x:Name="entryCode"  TextColor="Black"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,6,0,6" Keyboard="Numeric">
+                            <Controls:XEntry.Behaviors>
+                                <behavior:MaskedBehavior Mask="XXXXXX"></behavior:MaskedBehavior>
+                            </Controls:XEntry.Behaviors>
+
+                        </Controls:XEntry>
+                    </StackLayout>
+
+
+
+                </Frame>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
+                    <Image Source="clockIcon.png" HeightRequest="24" WidthRequest="24"></Image>
+                    <Label Margin="6,0,0,0" x:Name="lblTimer" TextColor="#2dbefc" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                </StackLayout>
+                <Label x:Name="lblSendAgain" Text="Kodu yeniden gönder" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tapSendAgain" NumberOfTapsRequired="1" Tapped="TapSendAgain_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                
+                
+                <!--<Label Margin="0,5,6,2" x:Name="lblWhy" FontAttributes="Bold" Text=""></Label>
+                <Label Text="Harbi Saha" FontAttributes="Italic"></Label>-->
+
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+
+                <Button x:Name="btnConfirm" BackgroundColor="#2dbefc" TextColor="White" FontAttributes="Bold"
+                            Margin="12,0,12,5" Text="ONAYLA VE BİTİR" Clicked="BtnConfirm_Clicked"></Button>
+
+            </StackLayout>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
